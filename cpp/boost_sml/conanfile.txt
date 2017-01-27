@@ -1,5 +1,6 @@
 [requires]
 boost-sml/git-master@erikzenker/testing
+gtest/1.8.0@lasote/stable
 
 [generators]
 cmake
