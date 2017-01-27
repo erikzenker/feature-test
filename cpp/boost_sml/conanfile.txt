@@ -1,0 +1,5 @@
+[requires]
+boost-sml/git-master@erikzenker/testing
+
+[generators]
+cmake
