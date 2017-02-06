@@ -1,10 +1,8 @@
-project(BoostSmlTest)
+project(ConanGtestExample)
 cmake_minimum_required(VERSION 2.8.12)
 
-# CONAN
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup()
-set(LIBS ${LIBS} ${CONAN_LIBS})
 
 # Necessary to compile gtest
 # - dependencies and final build
@@ -13,6 +11,5 @@ set(LIBS ${LIBS} ${CONAN_LIBS})
 #   error will occure.
 set(CMAKE_BUILD_TYPE Release)
 
-# TARGETS
 add_executable(main main.cpp)
-target_link_libraries(main ${LIBS})
+target_link_libraries(main ${CONAN_LIBS})

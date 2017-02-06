@@ -1,5 +1,4 @@
 [requires]
-boost-sml/git-master@erikzenker/testing
 gtest/1.7.0@lasote/stable
 
 [generators]
