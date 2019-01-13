@@ -1,0 +1,19 @@
+{
+  "name": "prometheus",
+  "license": "MIT",
+  "dependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.5",
+    "axios": "^0.18.0",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.5",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.2.2"
+  },
+  "scripts": {
+    "build": "tsc --build tsconfig.json",
+    "test": "mocha --require ts-node/register test/**/*.ts"
+  }
+}
