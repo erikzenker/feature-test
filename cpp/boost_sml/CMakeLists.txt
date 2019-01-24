@@ -1,18 +1,18 @@
+cmake_minimum_required(VERSION 3.5)
 project(BoostSmlTest)
-cmake_minimum_required(VERSION 2.8.12)
 
-# CONAN
-include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
-conan_basic_setup()
-set(LIBS ${LIBS} ${CONAN_LIBS})
+# dependencies
+enable_testing()
+find_package(GTest MODULE REQUIRED)
 
-# Necessary to compile gtest
-# - dependencies and final build
-#   need to be compiled with same
-#   build type. Otherwise linker
-#   error will occure.
-set(CMAKE_BUILD_TYPE Release)
-
-# TARGETS
-add_executable(main main.cpp)
-target_link_libraries(main ${LIBS})
+# target defintion
+add_executable(BoostSmlTest main.cpp)
+target_compile_features(BoostSmlTest PRIVATE cxx_std_14)
+target_link_libraries(BoostSmlTest
+        PRIVATE
+        GTest::Main
+        GTest::GTest
+        )
+add_test(NAME BoostSml.Tests
+        COMMAND BoostSmlTest
+        )
