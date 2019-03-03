@@ -19,7 +19,8 @@
       });
 
       function sendMsg() {
-        socket.emit("message", "HELLO WORLD");
+        socket.emit("message", 0b1010);
+        socket.send("Send message");
       }
     </script>
   </body>
